@@ -71,22 +71,19 @@ function Runner(outerContainerId, opt_config) {
   this.pollingGamepads = false;
   this.gamepadIndex = undefined;
   this.previousGamepad = null;
-
-  if (this.isDisabled()) {
-    this.setupDisabledRunner();
-  } else {
-    if(IS_MOBILE){
-      document.getElementById('msg').innerHTML = "<br>Tap the runner to play";
-    }
-    else{
-      document.getElementById('msg').innerHTML = "Press space to play";
-    }
-    
-    this.loadImages();
-
-    window['initializeEasterEggHighScore'] =
-        this.initializeHighScore.bind(this);
+  
+  if(IS_MOBILE){
+    document.getElementById('msg').innerHTML = "<br>Tap the runner to play";
   }
+  else{
+    document.getElementById('msg').innerHTML = "<br>Press space to play";
+  }
+  
+  this.loadImages();
+
+  window['initializeEasterEggHighScore'] =
+      this.initializeHighScore.bind(this);
+  
 }
 
 /**
@@ -248,32 +245,6 @@ Runner.events = {
 };
 
 Runner.prototype = {
-  /**
-   * Whether the easter egg has been disabled. CrOS enterprise enrolled devices.
-   * @return {boolean}
-   */
-  isDisabled() {
-    // return loadTimeData && loadTimeData.valueExists('disabledEasterEgg');
-    return false;
-  },
-
-  /**
-   * For disabled instances, set up a snackbar with the disabled message.
-   */
-  setupDisabledRunner() {
-    this.containerEl = document.createElement('div');
-    this.containerEl.className = Runner.classes.SNACKBAR;
-    this.containerEl.textContent = loadTimeData.getValue('disabledEasterEgg');
-    this.outerContainerEl.appendChild(this.containerEl);
-
-    // Show notification when the activation key is pressed.
-    document.addEventListener(Runner.events.KEYDOWN, function(e) {
-      if (Runner.keycodes.JUMP[e.keyCode]) {
-        this.containerEl.classList.add(Runner.classes.SNACKBAR_SHOW);
-        document.querySelector('.icon').classList.add('icon-disabled');
-      }
-    }.bind(this));
-  },
 
   /**
    * Setting individual settings for debugging.

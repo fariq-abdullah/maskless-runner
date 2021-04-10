@@ -54,20 +54,6 @@ a {
       url(../../resources/default_200_percent/neterror/error_network_generic.png) 2x);
 }
 
-.icon-offline {
-  content: -webkit-image-set(
-      url(images/default_100_percent/offline/100-error-offline.png) 1x,
-      url(images/default_200_percent/offline/200-error-offline.png) 2x);
-  position: relative;
-}
-
-.icon-disabled {
-  content: -webkit-image-set(
-      url(images/default_100_percent/offline/100-disabled.png) 1x,
-      url(images/default_200_percent/offline/200-disabled.png) 2x);
-  width: 112px;
-}
-
 .error-code {
   display: block;
   font-size: .8em;
@@ -325,26 +311,6 @@ a {
   }
 }
 
-#download-link, #download-link-clicked {
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-#download-link-clicked {
-  color: #BBB;
-}
-
-#download-link:before, #download-link-clicked:before {
-  content: url(images/download-blue.svg);
-  display: inline-block;
-  margin-inline-end: 4px;
-  vertical-align: -webkit-baseline-middle;
-}
-
-#download-link-clicked:before {
-  width: 0px;
-  opacity: 0;
-}
 
 #offline-content-list-visibility-card {
   border: 1px solid white;
@@ -738,31 +704,6 @@ html[subframe] body {
   float: none;
 }
 
-/* download-button shows both icon and text. */
-#download-button {
-  padding-bottom: 4px;
-  padding-top: 4px;
-  position: relative;
-}
-
-#download-button:before {
-  background: -webkit-image-set(
-      url(../../resources/default_100_percent/neterror/download.png) 1x,
-      url(../../resources/default_200_percent/neterror/download.png) 2x)
-    no-repeat;
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin-inline-end: 4px;
-  margin-inline-start: -4px;
-  vertical-align: middle;
-}
-
-#download-button:disabled {
-  background: rgb(180, 206, 249);
-  color: rgb(255, 255, 255);
-}
 
 /*
 TODO(https://crbug.com/852872): UI for offline suggested content is incomplete.
@@ -874,10 +815,7 @@ whereas Blink does not. */
 }
 
 @media (max-width: 420px) {
-  #download-button {
-    padding-bottom: 12px;
-    padding-top: 12px;
-  }
+ 
 
   .suggested-left > #control-buttons,
   .suggested-right > #control-buttons {
@@ -897,9 +835,6 @@ whereas Blink does not. */
     margin: 0 0 15px;
   }
 
-  .icon-offline {
-    margin: 0 0 10px;
-  }
 
   .interstitial-wrapper {
     margin-top: 5%;
@@ -933,15 +868,9 @@ whereas Blink does not. */
     margin-bottom: 90px;
   }
 
-  .icon-offline {
-    margin-bottom: 20px;
-  }
 }
 
 @media (max-height: 320px) and (orientation: landscape) {
-  .icon-offline {
-    margin-bottom: 0;
-  }
 
   .offline .runner-container {
     top: 10px;
