@@ -73,10 +73,10 @@ function Runner(outerContainerId, opt_config) {
   this.previousGamepad = null;
   
   if(IS_MOBILE){
-    document.getElementById('msg').innerHTML = "<br>Tap the runner to play";
+    document.getElementById('msg').innerHTML = "<br><br>You are out on the street without any mask. Now try to avoid coronavirus, police and crowds. Tap the runner to start.";
   }
   else{
-    document.getElementById('msg').innerHTML = "<br>Press space to play";
+    document.getElementById('msg').innerHTML = "<br><br>You are out on the street without any mask. Now try to avoid coronavirus, police and crowds. Press space to start.";
   }
   
   this.loadImages();
