@@ -563,7 +563,7 @@ Runner.prototype = {
         const showNightMode = this.isDarkMode ^ this.inverted;
         deltaTime = !this.activated ? 0 : deltaTime;
         this.horizon.update(
-            deltaTime, this.currentSpeed, hasObstacles, showNightMode);
+            deltaTime, this.currentSpeed, hasObstacles, false);
       }
 
       // Check for collisions.
