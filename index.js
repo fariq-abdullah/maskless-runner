@@ -1085,17 +1085,17 @@ Runner.prototype = {
    * @param {boolean} reset Whether to reset colors.
    */
   invert(reset) {
-    const htmlEl = document.firstElementChild;
+    // const htmlEl = document.firstElementChild;
 
-    if (reset) {
-      htmlEl.classList.toggle(Runner.classes.INVERTED,
-          false);
-      this.invertTimer = 0;
-      this.inverted = false;
-    } else {
-      this.inverted = htmlEl.classList.toggle(
-          Runner.classes.INVERTED, this.invertTrigger);
-    }
+    // if (reset) {
+    //   htmlEl.classList.toggle(Runner.classes.INVERTED,
+    //       false);
+    //   this.invertTimer = 0;
+    //   this.inverted = false;
+    // } else {
+    //   this.inverted = htmlEl.classList.toggle(
+    //       Runner.classes.INVERTED, this.invertTrigger);
+    // }
   }
 };
 
