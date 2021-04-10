@@ -75,6 +75,13 @@ function Runner(outerContainerId, opt_config) {
   if (this.isDisabled()) {
     this.setupDisabledRunner();
   } else {
+    if(IS_MOBILE){
+      document.getElementById('msg').innerHTML = "<br>Tap the runner to play";
+    }
+    else{
+      document.getElementById('msg').innerHTML = "Press space to play";
+    }
+    
     this.loadImages();
 
     window['initializeEasterEggHighScore'] =
@@ -106,6 +113,7 @@ const IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS;
 /** @const */
 const ARCADE_MODE_URL = 'chrome://dino/';
 
+const HIDDEN_CLASS = 'hidden';
 /**
  * Default game configuration.
  */
